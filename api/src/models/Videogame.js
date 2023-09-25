@@ -1,33 +1,41 @@
-const { DataTypes } = require('sequelize');
-const { v4: uuidv4 } = require('uuid');
+import { DataTypes } from "sequelize";
+// import { v4 as uuidv4 } from "uuid";
 
-module.exports = (sequelize) => {
-  sequelize.define('videogame', {
+const Videogame = (sequelize) => {
+  sequelize.define('Videogame', {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
     },
-    description: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    platform: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+    description: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
-    imagen: {
+    platforms: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     released: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     rating: {
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
       allowNull: false,
     },
-  });
+  },
+  {timestamps: false}
+  );
 };
+
+export default Videogame;

@@ -1,11 +1,16 @@
-
 import { config } from 'dotenv';
-import { server } from './src/index.js';
+import { server } from './src/bootstrap/index.js';
+import { database } from './src/bootstrap/index.js';
 
 
-// Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
+
+
+config();
+
+const { PORT } = process.env;
+server.listen(PORT, async () => {
+  await database.sync({force:false})
+  console.log(`Server running on port ${PORT}`);
+
+  
 });

@@ -1,18 +1,22 @@
-const { DataTypes } = require('sequelize');
+import { DataTypes } from "sequelize";
 // Exportamos una función que define el modelo
 // Luego le inyectamos la conexión a Sequelize.
-module.exports = (sequelize) => {
+const Genre = (sequelize) => {
   // Definimos el modelo
-  sequelize.define('Genres', {
+  sequelize.define('Genre', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
       allowNull: false,
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+  }, 
+  {timestamps:false}
+  );
 };
+
+
+export default Genre;
