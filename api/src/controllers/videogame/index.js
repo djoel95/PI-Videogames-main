@@ -26,8 +26,10 @@ const createVideoGame = async (name, description, image, released, rating, genre
         throw new Error("Debe seleccionar al menos una plataforma");
     }
     console.log(platforms);
-    const newGenresExist = await Genre.findAll({ where: { id: genres } });
+    const newGenresExist = await Genre.findByPk(genres);
     const newPlatformsExist = await Platform.findByPk(platforms);
+    console.log(newPlatformsExist);
+    console.log(newPlatformsExist);
 
 
     const videogame = await Videogame.create({ name, description, image, released, rating });
@@ -38,6 +40,11 @@ const createVideoGame = async (name, description, image, released, rating, genre
     const newVideogame = await Videogame.findByPk(videogame.id, {
         include: {
             model: Genre,
+            attributes: ["name"],
+            through: {
+                attributes: []
+            },
+            model: Platform,
             attributes: ["name"],
             through: {
                 attributes: []

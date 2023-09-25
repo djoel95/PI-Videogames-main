@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'zrnic';
+    src: url('../../../fonts/zrnic\ rg.ttf');
+  }
+
+
+  .container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0);
+    background-size:auto;
+    background-position: center;
+    padding: 10px;
+    display: flex;
+   
+  }
+  
+    
+    .title {
+      background-image: none;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 400;
+      display: block;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+  
+  
+    .envelop{
+      position: sticky;
+      top: 0px;
+    }
+
+
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 196px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+}

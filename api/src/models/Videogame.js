@@ -17,16 +17,12 @@ const Videogame = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    platforms: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     released: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     rating: {

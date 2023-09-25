@@ -1,0 +1,156 @@
+.detailContainerForm { 
+    min-height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+   background-image: backgroundImage  ;
+}
+  
+.container { 
+    gap: 1rem; 
+}
+  
+  .detailContainerGroup {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    width:  100%;
+  }
+  
+  .containerImage { 
+    display: inline-flex;
+    width: 50%;
+    height: 100%; 
+    margin-left: 3rem; 
+    align-items: center;
+     justify-content: 
+     center; opacity: 1;
+     }
+  
+  .img {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 2rem;
+  }
+  .container.clicked {
+    animation: none;
+  }
+  .containerBaseText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7rem;
+    color: black;
+    border-radius: 1rem;
+    margin: auto;
+    height: 100%;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-size: 12px;
+    font-weight: bold;
+      max-width: 800px;
+    width: 100%;  
+  
+    
+  }
+  
+  .containerText {
+    width: 30rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+  }
+
+  .containerText h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(271deg, #f71300, #e35144, #de1200, #5e221c, #ab0e00);
+    background-size: 1000% 1000%;
+    animation: AnimationTitle 30s ease infinite;
+  }
+  
+  .containerText h4 {
+    border-right: 3px hidden transparent;
+    border-radius: 13px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+ 
+    }
+  .containerText h4:hover {
+    cursor: pointer;
+    color: red;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    width: 45rem;
+    margin-top: 2rem;
+    margin-left: 35rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .buttonsContainer button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(271deg, #f71300, #e35144, #de1200, #5e221c, #ab0e00);
+    background-size: 1000% 1000%;
+    animation: AnimationTitle 30s ease infinite;
+  }
+  
+  .buttonsContainer button svg {
+    margin-right: 0.5rem;
+} 
+
+
+
+@keyframes AnimationTitle {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+  .buttonsContainer button:hover {
+    background-color: #293241;
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
