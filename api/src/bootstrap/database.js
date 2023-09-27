@@ -17,9 +17,28 @@ PlatformModel(database);
 
 export const { Videogame, Genre, Platform } = database.models;
 
-Videogame.belongsToMany(Genre, { through: 'videogames_genres',timestamps:false });
-Genre.belongsToMany(Videogame, { through: 'videogames_genres',timestamps:false });
-Videogame.belongsToMany(Platform, { through: 'videogames_platforms',timestamps:false });
-Platform.belongsToMany(Videogame, { through: 'videogames_platforms',timestamps:false });
+Videogame.belongsToMany(Genre, {
+  through: "videogames_genres",
+  as: "genres",
+  foreignKey: "genre_id",
+  timestamps: false,
+});
+Genre.belongsToMany(Videogame, {
+  through: "videogames_genres",
+  as: "videogames",
+  foreignKey: "videogame_id",
+  timestamps: false,
+});
 
-
+Videogame.belongsToMany(Platform, {
+  through: "videogames_platforms",
+  as: "platforms",
+  foreignKey: "platform_id",
+  timestamps: false,
+});
+Platform.belongsToMany(Videogame, {
+  through: "videogames_platforms",
+  as: "videogames",
+  foreignKey: "videogame_id",
+  timestamps: false,
+});

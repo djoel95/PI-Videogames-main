@@ -12,5 +12,5 @@ server.listen(PORT, async () => {
   await database.sync({force:false})
   console.log(`Server running on port ${PORT}`);
 
-  
+   
 });

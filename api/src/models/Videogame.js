@@ -27,7 +27,7 @@ const Videogame = (sequelize) => {
     },
     rating: {
       type: DataTypes.FLOAT,
-      allowNull: false,
+      allowNull: false, 
     },
   },
   {timestamps: false}

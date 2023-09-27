@@ -8,19 +8,18 @@ const createGenre = async () => {
     const data = response.data.results;
     const sortedData = data.sort((a, b) => a.id - b.id); // Ordena los datos por id
 
-    const promises = sortedData.map(async(gen) => {
+    const promises = sortedData.map(async (gen) => {
       return await Genre.findOrCreate({
-        where: { id: gen.id , name: gen.name},
+        where: { id: gen.id, name: gen.name }, defaults: { name: gen.name },
       });
     });
 
     const genres = await Promise.all(promises);
-      // const genres = sortedData.map (gen => ({id: gen.id, name: gen.name}));
-    console.log(genres);
-
-    return genres
+    const sorted = genres.map(gen => ({ id: gen[0].id, name: gen[0].name }));
+    return sorted
 
   } catch (error) {
+    
     window.alert(error?.data || 'Ha ocurrido un error');
 
   }

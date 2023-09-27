@@ -36,12 +36,10 @@ export const getVideogameByIdHandler = async (req, res) => {
 export const postVideogamesHandler = async (req, res) => {
   const { name, description, platforms, image, released, rating, genres } = req.body;
   try {
-    if (!name || !description || !platforms || !image || !released || !rating || !genres ) throw Error("Missing data");
-    const newVideoGame = await createVideoGame(name, description, platforms, image, released, rating, genres);
+    if (!name || !description || !platforms || !image || !released || !rating || !genres) throw Error("Missing data");
+    const newVideoGame = await createVideoGame(name, description, image, released, rating, genres, platforms);
     res.status(201).json(newVideoGame);
-
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
-
