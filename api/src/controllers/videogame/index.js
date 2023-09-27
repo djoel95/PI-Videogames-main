@@ -11,7 +11,6 @@ const { API_Key, URL } = process.env;
 // Controller post videogame.
 // Debe crear un videojuego en la base de datos, y este debe estar relacionado con sus géneros indicados (al menos uno).
 const createVideoGame = async (name, description, image, released, rating, genres, platforms) => {
-    console.log(name, description, image, released, rating, genres, platforms);
     const found = await Videogame.findOne({ where: { name } });
 
     if (found) {
